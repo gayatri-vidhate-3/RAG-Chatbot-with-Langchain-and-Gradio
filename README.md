@@ -22,31 +22,32 @@ It's a compact demonstration of the core RAG skill set: document ingestion, chun
 ## ⚙️ How it works
 
 ```
-User uploads a document (.pdf / .txt / .docx)
+   User uploads a document (.pdf / .txt / .docx)
               │
               ▼
-   loader_chunking.py
-   loads the file, splits it into overlapping text chunks
+       loader_chunking.py
+   (loads the file, splits it into overlapping text chunks)
               │
               ▼
-   embedding.py
-   converts each chunk into a vector embedding
+       embedding.py
+   (converts each chunk into a vector embedding)
               │
               ▼
-   vector_db.py
-   stores the vectors in Chroma, exposes a retriever
+       vector_db.py
+   (stores the vectors in Chroma, exposes a retriever)
               │
-              │        User's question
-              │              │
-              ▼              ▼
-   chain.py  (LCEL pipeline)
-   retriever finds the most relevant chunks
-     → builds a grounded prompt
-       → sends it to the Groq LLM
-         → parses the response into plain text
+              │     User's question
+              │          │
+              ▼          ▼
+       chain.py  (LCEL pipeline)
+     retriever finds the most relevant chunks
+      → builds a grounded prompt
+      → sends it to the Groq LLM
+      → parses the response into plain text
               │
               ▼
    Answer shown in the Gradio UI
+
 ```
 
 The chain is built with **LCEL** (`retriever | format_docs | prompt | llm | parser`) instead of the older `RetrievalQA` / `create_retrieval_chain` helpers, which were removed/relocated in LangChain 1.0+. LCEL is the current recommended pattern — each step is explicit, composable, and independently testable.
@@ -101,7 +102,7 @@ rag-chatbot-langchain-groq/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/rag-chatbot-langchain-groq.git
+git clone < repo url>
 cd rag-chatbot-langchain-groq
 ```
 
@@ -118,7 +119,7 @@ pip install -r requirements.txt
 ```
 
 ### 4. Add your Groq API key
-Copy `.env.example` to `.env` and add your key (get a free one at [console.groq.com](https://console.groq.com)):
+Copy `env_example.txt` to `.env` and add your key (get a free one at [console.groq.com](https://console.groq.com)):
 ```
 GROQ_API_KEY=your_actual_groq_key_here
 ```
@@ -153,6 +154,7 @@ Open the local URL Gradio prints (usually `http://127.0.0.1:7860`) in your brows
 ## 👩‍💻 Author
 
 **Gayatri Vidhate**
-Machine Learning Engineer | NLP & GenAI Enthusiast
+
+Data Scientist | Machine Learning Engineer | NLP Engineer | GenAI Engineer
 
 If you found this useful, feel free to ⭐ the repo or connect with me!
