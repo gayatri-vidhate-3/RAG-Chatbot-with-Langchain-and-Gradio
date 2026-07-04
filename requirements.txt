@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------
+# requirements.txt
+# ----------------------------------------------------------------------
+# Install everything with:
+#     pip install -r requirements.txt
+# ----------------------------------------------------------------------
+
+# Core LangChain packages (same versions/family used in the reference notebook)
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# Groq LLM integration (llama-3.1-8b-instant)
+langchain-groq
+
+# HuggingFace embedding model support
+langchain-huggingface
+sentence-transformers
+
+# Vector database
+chromadb
+
+# Document loaders
+pypdf          # for .pdf files
+docx2txt       # for .docx files
+
+# Reads GROQ_API_KEY from a local .env file
+python-dotenv
+
+# Web UI
+gradio
