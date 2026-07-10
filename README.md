@@ -1,4 +1,4 @@
-# 📄 RAG Chatbot — Chat With Any Document (LangChain + Groq + Gradio)
+# 📄 RAG Chatbot — Chat With Any Document (LangChain + Groq + ChromaDB + Gradio)
 
 An end-to-end **Retrieval-Augmented Generation (RAG)** chatbot that lets you upload any document — PDF, TXT, or DOCX — and ask natural-language questions about it. The chatbot answers strictly from the document's own content, not from the LLM's general knowledge, making it grounded, verifiable, and hallucination-resistant by design.
 
